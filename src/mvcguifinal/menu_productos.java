@@ -4,6 +4,8 @@
  */
 package mvcguifinal;
 
+import controller.productosController;
+
 /**
  *
  * @author HP
@@ -17,7 +19,11 @@ public class menu_productos extends javax.swing.JFrame {
      */
     public menu_productos() {
         initComponents();
+        productosController tabla = new productosController(this);
+        tabla.ListarProductos();
+        
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,6 +35,23 @@ public class menu_productos extends javax.swing.JFrame {
     private void initComponents() {
 
         btnRegresar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtNombrePro = new javax.swing.JTextField();
+        txtPrecioPro = new javax.swing.JTextField();
+        txtVencimientoPro = new javax.swing.JTextField();
+        txtStockPro = new javax.swing.JTextField();
+        cbxCategoriaPro = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblProductos = new javax.swing.JTable();
+        btbGuardarCli = new javax.swing.JButton();
+        btnEliminarClie = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnActualizarCli = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -37,10 +60,84 @@ public class menu_productos extends javax.swing.JFrame {
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(this::btnRegresarActionPerformed);
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, -1, -1));
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Veterinaria wallpaper.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 480));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("GESTION DE PRODUCTOS");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setText("Fecha de vencimiento");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 130, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setText("Categoria");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setText("Nombre");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 63, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setText("Precio");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 63, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel7.setText("Stock");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 63, -1));
+
+        txtNombrePro.addActionListener(this::txtNombreProActionPerformed);
+        getContentPane().add(txtNombrePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 110, -1));
+        getContentPane().add(txtPrecioPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 110, -1));
+        getContentPane().add(txtVencimientoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 110, -1));
+        getContentPane().add(txtStockPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 110, -1));
+
+        cbxCategoriaPro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alimentos", "Medicamentos", "Vacunas y Biológicos", "Higiene y Estética", "Accesorios", "Juguetes", "Camas y Transporte", "Insumos Médicos", "Suplementos y Vitaminas" }));
+        cbxCategoriaPro.addActionListener(this::cbxCategoriaProActionPerformed);
+        getContentPane().add(cbxCategoriaPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 110, -1));
+
+        tblProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Nombre", "Categoria", "Precio", "Stock", "Fecha de Vencimienato"
+            }
+        ));
+        tblProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblProductosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblProductos);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 360, 120));
+
+        btbGuardarCli.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btbGuardarCli.setText("Guardar");
+        btbGuardarCli.addActionListener(this::btbGuardarCliActionPerformed);
+        getContentPane().add(btbGuardarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
+
+        btnEliminarClie.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnEliminarClie.setText("Eliminar");
+        btnEliminarClie.addActionListener(this::btnEliminarClieActionPerformed);
+        getContentPane().add(btnEliminarClie, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
+
+        btnLimpiar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
+
+        btnActualizarCli.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnActualizarCli.setText("Actualizar");
+        btnActualizarCli.addActionListener(this::btnActualizarCliActionPerformed);
+        getContentPane().add(btnActualizarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -53,6 +150,61 @@ public class menu_productos extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void cbxCategoriaProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCategoriaProActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxCategoriaProActionPerformed
+
+    private void txtNombreProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreProActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreProActionPerformed
+
+    private void btbGuardarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbGuardarCliActionPerformed
+        // TODO add your handling code here:
+        productosController control = new productosController(this);
+        control.insertarProductos();
+        limpiar();
+    }//GEN-LAST:event_btbGuardarCliActionPerformed
+
+    private void btnEliminarClieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClieActionPerformed
+        // TODO add your handling code here:
+        productosController control = new productosController(this);
+        control.eliminarProductos();
+        limpiar();
+    }//GEN-LAST:event_btnEliminarClieActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnActualizarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarCliActionPerformed
+        // TODO add your handling code here:
+        productosController cc = new productosController(this);
+        cc.actualizarProductos();
+        limpiar();
+    }//GEN-LAST:event_btnActualizarCliActionPerformed
+
+    private void tblProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductosMouseClicked
+        // TODO add your handling code here:
+        int fila = tblProductos.getSelectedRow();
+if (fila >= 0) {
+   
+    String id = tblProductos.getValueAt(fila, 0).toString();
+    String nombre = tblProductos.getValueAt(fila, 1).toString();
+    String categoria = tblProductos.getValueAt(fila, 2).toString();
+    String precio = tblProductos.getValueAt(fila, 3).toString();
+    String stock = tblProductos.getValueAt(fila, 4).toString();
+    String fechaVencimiento = tblProductos.getValueAt(fila, 5).toString();
+
+    
+    txtNombrePro.setText(nombre);
+    cbxCategoriaPro.setSelectedItem(categoria);
+    txtPrecioPro.setText(precio);
+    txtStockPro.setText(stock);
+    txtVencimientoPro.setText(fechaVencimiento);
+}
+    }//GEN-LAST:event_tblProductosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -76,11 +228,36 @@ public class menu_productos extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new menu_productos().setVisible(true));
-    }
+        java.awt.EventQueue.invokeLater(() -> new menu_productos().setVisible(true));}
+        
+        public void limpiar(){
+        txtNombrePro.setText("");
+        cbxCategoriaPro.setSelectedIndex(0);
+        txtPrecioPro.setText("");
+        txtStockPro.setText("");
+        txtVencimientoPro.setText("");
+}
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btbGuardarCli;
+    public javax.swing.JButton btnActualizarCli;
+    public javax.swing.JButton btnEliminarClie;
+    public javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegresar;
+    public javax.swing.JComboBox<String> cbxCategoriaPro;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable tblProductos;
+    public javax.swing.JTextField txtNombrePro;
+    public javax.swing.JTextField txtPrecioPro;
+    public javax.swing.JTextField txtStockPro;
+    public javax.swing.JTextField txtVencimientoPro;
     // End of variables declaration//GEN-END:variables
 }
