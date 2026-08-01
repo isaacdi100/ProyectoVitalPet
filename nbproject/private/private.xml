@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/MVCGUIFinal/src/mvcguifinal/menu_clientes.java</file>
+            <file>file:/C:/MVCGUIFinal/src/mvcguifinal/Login.java</file>
+            <file>file:/C:/MVCGUIFinal/src/dao/clientesDAO.java</file>
+            <file>file:/C:/MVCGUIFinal/src/controller/clientesController.java</file>
+            <file>file:/C:/MVCGUIFinal/src/controller/LoginController.java</file>
+            <file>file:/C:/MVCGUIFinal/src/modelo/clientes.java</file>
+            <file>file:/C:/MVCGUIFinal/src/modelo/conexionBase.java</file>
+            <file>file:/C:/MVCGUIFinal/src/mvcguifinal/MVCGUIFinal.java</file>
+            <file>file:/C:/MVCGUIFinal/src/mvcguifinal/Menu.java</file>
+        </group>
+    </open-files>
+</project-private>
