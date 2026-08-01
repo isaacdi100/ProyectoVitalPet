@@ -32,22 +32,30 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnCRUDClientes = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCRUDProductos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btnCRUDClientes1 = new javax.swing.JButton();
+        btnCRUDClientes2 = new javax.swing.JButton();
+        btnCRUDClientes3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("         MENU VITALPET");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 187, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 10, 187, 30));
 
         btnCRUDClientes.setBackground(new java.awt.Color(0, 204, 204));
         btnCRUDClientes.setText("𝓒𝓛𝓘𝓔𝓝𝓣𝓔");
         btnCRUDClientes.addActionListener(this::btnCRUDClientesActionPerformed);
-        getContentPane().add(btnCRUDClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 66, 137, 39));
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 66, 139, 43));
+        getContentPane().add(btnCRUDClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 137, 39));
+
+        btnCRUDProductos.setBackground(new java.awt.Color(0, 204, 204));
+        btnCRUDProductos.setText("𝓟𝓡𝓞𝓓𝓤𝓒𝓣𝓞𝓢");
+        btnCRUDProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCRUDProductos.addActionListener(this::btnCRUDProductosActionPerformed);
+        getContentPane().add(btnCRUDProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 139, 43));
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(this::btnSalirActionPerformed);
@@ -55,6 +63,21 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/505055.jpeg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 350));
+
+        btnCRUDClientes1.setBackground(new java.awt.Color(0, 204, 204));
+        btnCRUDClientes1.setText("𝓒𝓛𝓘𝓔𝓝𝓣𝓔");
+        btnCRUDClientes1.addActionListener(this::btnCRUDClientes1ActionPerformed);
+        getContentPane().add(btnCRUDClientes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 66, 137, 39));
+
+        btnCRUDClientes2.setBackground(new java.awt.Color(0, 204, 204));
+        btnCRUDClientes2.setText("𝓒𝓛𝓘𝓔𝓝𝓣𝓔");
+        btnCRUDClientes2.addActionListener(this::btnCRUDClientes2ActionPerformed);
+        getContentPane().add(btnCRUDClientes2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 66, 137, 39));
+
+        btnCRUDClientes3.setBackground(new java.awt.Color(0, 204, 204));
+        btnCRUDClientes3.setText("𝓒𝓛𝓘𝓔𝓝𝓣𝓔");
+        btnCRUDClientes3.addActionListener(this::btnCRUDClientes3ActionPerformed);
+        getContentPane().add(btnCRUDClientes3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 137, 39));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -73,6 +96,27 @@ public class Menu extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_btnCRUDClientesActionPerformed
+
+    private void btnCRUDClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRUDClientes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCRUDClientes1ActionPerformed
+
+    private void btnCRUDClientes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRUDClientes2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCRUDClientes2ActionPerformed
+
+    private void btnCRUDClientes3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRUDClientes3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCRUDClientes3ActionPerformed
+
+    private void btnCRUDProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRUDProductosActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Gestion de Productos ");
+        menu_productos ingresar = new menu_productos();
+        ingresar.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnCRUDProductosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,8 +145,11 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCRUDClientes;
+    private javax.swing.JButton btnCRUDClientes1;
+    private javax.swing.JButton btnCRUDClientes2;
+    private javax.swing.JButton btnCRUDClientes3;
+    private javax.swing.JButton btnCRUDProductos;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
