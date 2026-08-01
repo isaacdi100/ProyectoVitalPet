@@ -52,6 +52,7 @@ public class menu_productos extends javax.swing.JFrame {
         btnEliminarClie = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnActualizarCli = new javax.swing.JButton();
+        chkNA = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,6 +137,10 @@ public class menu_productos extends javax.swing.JFrame {
         btnActualizarCli.addActionListener(this::btnActualizarCliActionPerformed);
         getContentPane().add(btnActualizarCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
 
+        chkNA.setText("N/A");
+        chkNA.addActionListener(this::chkNAActionPerformed);
+        getContentPane().add(chkNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 390));
 
@@ -187,24 +192,45 @@ public class menu_productos extends javax.swing.JFrame {
 
     private void tblProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductosMouseClicked
         // TODO add your handling code here:
-        int fila = tblProductos.getSelectedRow();
-if (fila >= 0) {
-   
-    String id = tblProductos.getValueAt(fila, 0).toString();
-    String nombre = tblProductos.getValueAt(fila, 1).toString();
-    String categoria = tblProductos.getValueAt(fila, 2).toString();
-    String precio = tblProductos.getValueAt(fila, 3).toString();
-    String stock = tblProductos.getValueAt(fila, 4).toString();
-    String fechaVencimiento = tblProductos.getValueAt(fila, 5).toString();
+       int fila = tblProductos.getSelectedRow();
+    if (fila >= 0) {
+        String id = tblProductos.getValueAt(fila, 0).toString();
+        String nombre = tblProductos.getValueAt(fila, 1).toString();
+        String categoria = tblProductos.getValueAt(fila, 2).toString();
+        String precio = tblProductos.getValueAt(fila, 3).toString();
+        String stock = tblProductos.getValueAt(fila, 4).toString();
+        String fechaVencimiento = tblProductos.getValueAt(fila, 5).toString();
 
-    
-    txtNombrePro.setText(nombre);
-    cbxCategoriaPro.setSelectedItem(categoria);
-    txtPrecioPro.setText(precio);
-    txtStockPro.setText(stock);
-    txtVencimientoPro.setText(fechaVencimiento);
-}
+        txtNombrePro.setText(nombre);
+        cbxCategoriaPro.setSelectedItem(categoria);
+        txtPrecioPro.setText(precio);
+        txtStockPro.setText(stock);
+
+        if (fechaVencimiento.equalsIgnoreCase("N/A")) {
+            chkNA.setSelected(true);
+            txtVencimientoPro.setText("N/A");
+            txtVencimientoPro.setEnabled(false);
+        } else {
+            chkNA.setSelected(false);
+            txtVencimientoPro.setText(fechaVencimiento);
+            txtVencimientoPro.setEnabled(true);
+        }
+    }
+
     }//GEN-LAST:event_tblProductosMouseClicked
+
+    private void chkNAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNAActionPerformed
+        // TODO add your handling code here:
+     if (chkNA.isSelected()) {
+        txtVencimientoPro.setText("N/A");      
+        txtVencimientoPro.setEnabled(false);   
+    } else {
+        txtVencimientoPro.setText("");         // Limpia solo la casilla de fecha
+        txtVencimientoPro.setEnabled(true);    // Vuelve a habilitar la caja
+    }
+
+
+    }//GEN-LAST:event_chkNAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,10 +258,19 @@ if (fila >= 0) {
         
         public void limpiar(){
         txtNombrePro.setText("");
+    
+  
+    if (cbxCategoriaPro.getItemCount() > 0) {
         cbxCategoriaPro.setSelectedIndex(0);
-        txtPrecioPro.setText("");
-        txtStockPro.setText("");
-        txtVencimientoPro.setText("");
+    }
+    
+    txtPrecioPro.setText("");
+    txtStockPro.setText("");
+    
+    
+    chkNA.setSelected(false);          
+    txtVencimientoPro.setText("");      
+    txtVencimientoPro.setEnabled(true); 
 }
     
 
@@ -246,6 +281,7 @@ if (fila >= 0) {
     public javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegresar;
     public javax.swing.JComboBox<String> cbxCategoriaPro;
+    private javax.swing.JCheckBox chkNA;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

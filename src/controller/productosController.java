@@ -7,10 +7,6 @@ import javax.swing.table.DefaultTableModel;
 import modelo.producto;
 import mvcguifinal.menu_productos;
 
-/**
- *
- * @author alexa
- */
 public class productosController {
     private menu_productos vista;
     private productosDAO dao;
@@ -20,13 +16,26 @@ public class productosController {
         dao = new productosDAO();
     }
 
-    public void insertarProductos() {
+   public void insertarProductos() {
+    // 1. Validar que no haya campos vacíos
+    if (vista.txtNombrePro.getText().trim().isEmpty() || 
+        vista.txtPrecioPro.getText().trim().isEmpty() || 
+        vista.txtStockPro.getText().trim().isEmpty() || 
+        vista.txtVencimientoPro.getText().trim().isEmpty()) {
+        
+        JOptionPane.showMessageDialog(null, "Campos incompletos");
+        return;
+    }
+
+    try {
         producto p = new producto();
-        p.setNombrePro(vista.txtNombrePro.getText());
+        p.setNombrePro(vista.txtNombrePro.getText().trim());
         p.setCategoriaPro(vista.cbxCategoriaPro.getSelectedItem().toString());
-        p.setPrecioPro(Double.parseDouble(vista.txtPrecioPro.getText()));
-        p.setStockPro(Integer.parseInt(vista.txtStockPro.getText()));
-        p.setFechaVencimientoPro(vista.txtVencimientoPro.getText());
+        
+        
+        p.setPrecioPro(Double.parseDouble(vista.txtPrecioPro.getText().trim()));
+        p.setStockPro(Integer.parseInt(vista.txtStockPro.getText().trim()));
+        p.setFechaVencimientoPro(vista.txtVencimientoPro.getText().trim());
 
         if (dao.insertarProductos(p)) {
             JOptionPane.showMessageDialog(null, "Producto Agregado");
@@ -34,7 +43,12 @@ public class productosController {
         } else {
             JOptionPane.showMessageDialog(null, "Error al agregar producto");
         }
+        
+    } catch (NumberFormatException e) {
+        
+        JOptionPane.showMessageDialog(null, "Precio y Stock deben ser valores numéricos válidos", "Error de Formato", JOptionPane.ERROR_MESSAGE);
     }
+}
 
     public void ListarProductos() {
         DefaultTableModel modelo = (DefaultTableModel) vista.tblProductos.getModel();
