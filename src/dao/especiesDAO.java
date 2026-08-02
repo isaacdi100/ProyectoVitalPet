@@ -24,7 +24,7 @@ public class especiesDAO {
     PreparedStatement ps;
     ResultSet rs;
 
-    // Insertar Especie
+    // Insertar Especies
     public Boolean insertarEspecies(especies e) {
         String sql = "INSERT INTO especies (nombre_especie, descripcion_especie) VALUES(?,?)";
         
@@ -44,6 +44,7 @@ public class especiesDAO {
     }
 
     // Listar Especies
+    //
     public List<especies> ListarEspecies() {
         List<especies> lista = new ArrayList<>();
         String sql = "SELECT * FROM especies";
