@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dao;
-// importar gggg
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -65,7 +65,7 @@ public class especiesDAO {
         return lista;
     }
 
-    // Eliminar Especie
+    // Eliminar Especies
     public boolean eliminarEspecies(int id_especie) {
         String sql = "DELETE FROM especies WHERE id_especie = ? ";
         try {
@@ -81,7 +81,7 @@ public class especiesDAO {
         }
     }
 
-    // Actualizar Especie
+    // Actualizar Especies
     public boolean actualizarEspecies(especies e) {
         String sql = "UPDATE especies SET nombre_especie=?, descripcion_especie=? WHERE id_especie=?";
         try {
