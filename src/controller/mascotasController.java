@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
+import dao.mascotasDAO;
+import java.util.List;
+
 
 /**
  *

@@ -12,8 +12,10 @@ public class mascotas {
     private int id_mas;
     private String nombre_mas;
     private String raza_mas;
-    private String nacimiento_mas;
+    private String F.nacimiento_mas;
     private String sexo_mas;
+    private int id_especie;
+    private int id_cliente;
 
     public int getId_mas() {
         return id_mas;

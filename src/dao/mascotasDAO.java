@@ -26,7 +26,7 @@ public class mascotasDAO {
     ResultSet rs;
     
 public boolean insertarMacotas(mascotas m){
-    String sql = "INSERT INTO mascotas (id_mas,nombre_mas,raza_mas,nacimiento_mas,sexo_mas)VALUES(?,?,?,?,?)";
+    String sql = "INSERT INTO mascotas (id_mas,nombre_mas,raza_mas,F.nacimiento_mas,sexo_mas)VALUES(?,?,?,?,?)";
     try{
         con =cn.getConnection();
         ps =con.prepareStatement(sql);

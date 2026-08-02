@@ -28,18 +28,107 @@ public class menu_mascotas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtNombreMa = new javax.swing.JTextField();
+        txtRazaMa = new javax.swing.JTextField();
+        txtNacimientoMa = new javax.swing.JTextField();
+        cbxSexoMa = new javax.swing.JComboBox<>();
+        btnInsertar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblMascotas = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtIdEspecie = new javax.swing.JTextField();
+        txtIdCliente = new javax.swing.JTextField();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setText("MASCOTAS");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 217, -1));
+
+        jLabel3.setText("NOMBRE");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 60, 30));
+
+        jLabel4.setText("RAZA");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 60, 30));
+
+        jLabel5.setText("F.NACIMIENTO");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 80, 20));
+
+        jLabel6.setText("SEXO");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 40, 20));
+        getContentPane().add(txtNombreMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 120, 30));
+        getContentPane().add(txtRazaMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 120, -1));
+        getContentPane().add(txtNacimientoMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 120, -1));
+
+        cbxSexoMa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Hembra" }));
+        getContentPane().add(cbxSexoMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 120, 20));
+
+        btnInsertar.setText("INSERTAR");
+        getContentPane().add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+
+        btnEliminar.setText("ELIMINAR");
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
+
+        btnActualizar.setText("ACTUALIZAR");
+        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, -1, -1));
+
+        btnLimpiar.setText("LIMPIAR");
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, -1, -1));
+
+        btnRegresar.setText("REGRESAR");
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, -1, -1));
+
+        tblMascotas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "id", "Nombre", "Raza", "F.Nacimiento", "Sexo", "id_especie", "id_cliente"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblMascotas);
+        if (tblMascotas.getColumnModel().getColumnCount() > 0) {
+            tblMascotas.getColumnModel().getColumn(0).setResizable(false);
+            tblMascotas.getColumnModel().getColumn(1).setResizable(false);
+            tblMascotas.getColumnModel().getColumn(2).setResizable(false);
+            tblMascotas.getColumnModel().getColumn(3).setResizable(false);
+            tblMascotas.getColumnModel().getColumn(4).setResizable(false);
+            tblMascotas.getColumnModel().getColumn(5).setResizable(false);
+            tblMascotas.getColumnModel().getColumn(6).setResizable(false);
+        }
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 520, 210));
+
+        jLabel2.setText("ID_ESPECIE");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+
+        jLabel7.setText("ID_CLIENTE");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
+        getContentPane().add(txtIdEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 120, 30));
+        getContentPane().add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 120, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -70,5 +159,25 @@ public class menu_mascotas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnInsertar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnRegresar;
+    public javax.swing.JComboBox<String> cbxSexoMa;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblMascotas;
+    private javax.swing.JTextField txtIdCliente;
+    public javax.swing.JTextField txtIdEspecie;
+    public javax.swing.JTextField txtNacimientoMa;
+    public javax.swing.JTextField txtNombreMa;
+    public javax.swing.JTextField txtRazaMa;
     // End of variables declaration//GEN-END:variables
 }
