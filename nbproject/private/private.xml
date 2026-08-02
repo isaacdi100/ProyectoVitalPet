@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/DELL/Desktop/ProyectoProgr/ProyectoFinal/ProyectoVitalPet/src/controller/mascotasController.java</file>
+            <file>file:/C:/Users/DELL/Desktop/ProyectoProgr/ProyectoFinal/ProyectoVitalPet/src/dao/mascotasDAO.java</file>
+            <file>file:/C:/Users/DELL/Desktop/ProyectoProgr/ProyectoFinal/ProyectoVitalPet/src/modelo/mascotas.java</file>
+            <file>file:/C:/Users/DELL/Desktop/ProyectoProgr/ProyectoFinal/ProyectoVitalPet/src/mvcguifinal/menu_especies.java</file>
+            <file>file:/C:/Users/DELL/Desktop/ProyectoProgr/ProyectoFinal/ProyectoVitalPet/src/mvcguifinal/menu_mascotas.java</file>
+            <file>file:/C:/Users/DELL/Desktop/ProyectoProgr/ProyectoFinal/ProyectoVitalPet/src/modelo/clientes.java</file>
+            <file>file:/C:/Users/DELL/Desktop/ProyectoProgr/ProyectoFinal/ProyectoVitalPet/src/controller/especiesController.java</file>
+            <file>file:/C:/Users/DELL/Desktop/ProyectoProgr/ProyectoFinal/ProyectoVitalPet/src/dao/especiesDAO.java</file>
+        </group>
     </open-files>
 </project-private>
