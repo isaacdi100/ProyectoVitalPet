@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package mvcguifinal;
-
+import controller.especiesController;
 /**
  *
  * @author ASUS
@@ -17,6 +17,8 @@ public class menu_especies extends javax.swing.JFrame {
      */
     public menu_especies() {
         initComponents();
+        especiesController tabla = new especiesController(this);
+        tabla.ListarEspecies();
     }
 
     /**
@@ -79,6 +81,11 @@ public class menu_especies extends javax.swing.JFrame {
                 "ID", "NOMBRE", "DESCRIPCION"
             }
         ));
+        tblEspecies.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblEspeciesMouseClicked(evt);
+            }
+        });
         tabla.setViewportView(tblEspecies);
 
         getContentPane().add(tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 350, 110));
@@ -92,21 +99,25 @@ public class menu_especies extends javax.swing.JFrame {
         btnActualizarEsp.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnActualizarEsp.setForeground(new java.awt.Color(102, 102, 255));
         btnActualizarEsp.setText("Actualizar");
+        btnActualizarEsp.addActionListener(this::btnActualizarEspActionPerformed);
         getContentPane().add(btnActualizarEsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, -1, -1));
 
         btnEliminarEsp.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnEliminarEsp.setForeground(new java.awt.Color(0, 204, 153));
         btnEliminarEsp.setText("Eliminar");
+        btnEliminarEsp.addActionListener(this::btnEliminarEspActionPerformed);
         getContentPane().add(btnEliminarEsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         btnLimpiar.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnLimpiar.setForeground(new java.awt.Color(255, 153, 51));
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
         getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
 
         btnRegresar.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(153, 0, 153));
         btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(this::btnRegresarActionPerformed);
         getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gg.png"))); // NOI18N
@@ -118,7 +129,49 @@ public class menu_especies extends javax.swing.JFrame {
 
     private void btnADDEspeciesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnADDEspeciesActionPerformed
         // TODO add your handling code here:
+        especiesController control = new especiesController(this);
+        control.insertarEspecies();
+        limpiar();
     }//GEN-LAST:event_btnADDEspeciesActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        Menu inicio=new Menu();
+        inicio.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnActualizarEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEspActionPerformed
+        // TODO add your handling code here:
+        especiesController cc = new especiesController(this);
+        cc.actualizarEspecies();
+        limpiar();
+    }//GEN-LAST:event_btnActualizarEspActionPerformed
+
+    private void tblEspeciesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEspeciesMouseClicked
+        // TODO add your handling code here:
+        int fila = tblEspecies.getSelectedRow();
+        if (fila >= 0) {
+        String id = tblEspecies.getValueAt(fila, 0).toString();
+        String nombre = tblEspecies.getValueAt(fila, 1).toString();
+        String descripcion = tblEspecies.getValueAt(fila, 2).toString();
+
+        txtNombreEsp.setText(nombre);
+        txtDescripcionEsp.setText(descripcion);
+    }//GEN-LAST:event_tblEspeciesMouseClicked
+    }
+    private void btnEliminarEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEspActionPerformed
+        // TODO add your handling code here:
+        especiesController control = new especiesController(this);
+        control.eliminarEspecies();
+        limpiar();
+    }//GEN-LAST:event_btnEliminarEspActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,7 +197,10 @@ public class menu_especies extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new menu_especies().setVisible(true));
     }
-
+public void limpiar() {
+    txtNombreEsp.setText("");
+    txtDescripcionEsp.setText("");
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnADDEspecies;
     private javax.swing.JButton btnActualizarEsp;

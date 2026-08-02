@@ -31,6 +31,7 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnCRUDEspecies = new javax.swing.JButton();
         btnCRUDClientes = new javax.swing.JButton();
         btnCRUDProductos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -42,9 +43,16 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("         MENU VITALPET");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 10, 187, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 360, 30));
+
+        btnCRUDEspecies.setBackground(new java.awt.Color(0, 204, 204));
+        btnCRUDEspecies.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        btnCRUDEspecies.setText("ESPECIES");
+        btnCRUDEspecies.addActionListener(this::btnCRUDEspeciesActionPerformed);
+        getContentPane().add(btnCRUDEspecies, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         btnCRUDClientes.setBackground(new java.awt.Color(0, 204, 204));
         btnCRUDClientes.setText("𝓒𝓛𝓘𝓔𝓝𝓣𝓔");
@@ -57,6 +65,8 @@ public class Menu extends javax.swing.JFrame {
         btnCRUDProductos.addActionListener(this::btnCRUDProductosActionPerformed);
         getContentPane().add(btnCRUDProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 139, 43));
 
+        btnSalir.setBackground(new java.awt.Color(204, 204, 255));
+        btnSalir.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(this::btnSalirActionPerformed);
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 248, -1, -1));
@@ -118,6 +128,15 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCRUDProductosActionPerformed
 
+    private void btnCRUDEspeciesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRUDEspeciesActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, " Especies de Mascotas ");
+        menu_especies ingresar = new menu_especies();
+        ingresar.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnCRUDEspeciesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -148,6 +167,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnCRUDClientes1;
     private javax.swing.JButton btnCRUDClientes2;
     private javax.swing.JButton btnCRUDClientes3;
+    private javax.swing.JButton btnCRUDEspecies;
     private javax.swing.JButton btnCRUDProductos;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
