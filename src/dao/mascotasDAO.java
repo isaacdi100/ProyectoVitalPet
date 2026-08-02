@@ -25,16 +25,19 @@ public class mascotasDAO {
     PreparedStatement ps;
     ResultSet rs;
     
+//INSERTAR    
 public boolean insertarMacotas(mascotas m){
-    String sql = "INSERT INTO mascotas (id_mas,nombre_mas,raza_mas,F.nacimiento_mas,sexo_mas)VALUES(?,?,?,?,?)";
+    String sql = "INSERT INTO mascotas (id_mas,nombre_mas,raza_mas,fecha_nacimiento_mas,sexo_mas,id_especie,id_cliente)VALUES(?,?,?,?,?,?,?)";
     try{
         con =cn.getConnection();
         ps =con.prepareStatement(sql);
         ps.setInt(1, m.getId_mas());
         ps.setString(2, m.getNombre_mas());
         ps.setString(3, m.getRaza_mas());
-        ps.setString(4, m.getNacimiento_mas());
+        ps.setString(4, m.getFecha_nacimiento_mas());
         ps.setString(5, m.getSexo_mas());
+        ps.setInt(6, m.getId_especie());
+        ps.setInt(7, m.getId_cliente());
         
         ps.executeUpdate();
         return true;
@@ -44,6 +47,7 @@ public boolean insertarMacotas(mascotas m){
         return false;
     }      
 }
+//LISTAR
 public List<mascotas>ListarMascotas(){
     List<mascotas> lista = new ArrayList<>();
     String sql= "SELECT * FROM mascotas";
@@ -56,8 +60,10 @@ public List<mascotas>ListarMascotas(){
             m.setId_mas(rs.getInt("id_mas"));
             m.setNombre_mas(rs .getString("nombre_mas"));
             m.setRaza_mas(rs .getString("raza_mas"));
-            m.setNacimiento_mas(rs .getString("nacimiento_mas"));
+            m.setFecha_nacimiento_mas(rs .getString("fecha_nacimiento_mas"));
             m.setSexo_mas(rs .getString("sexo_mas"));
+            m.setId_especie(rs.getInt("id_especie"));
+            m.setId_cliente(rs.getInt("id_cliente"));
             lista.add(m);
             
         }
@@ -67,6 +73,7 @@ public List<mascotas>ListarMascotas(){
     return lista;
     
 }
+//ELIMINAR
 public boolean eliminarMacotas(int id_mas){
     String  sql = "DELETE FROM mascotas WHERE id_mas = ? ";
     try{
@@ -81,16 +88,19 @@ public boolean eliminarMacotas(int id_mas){
         return false;
     }
 }
+//ACTUALIZAR
 public boolean actualizarMascotas(mascotas m){
-    String sql = "UPDATE mascotas SET nombre_mas=?, raza_mas=?, nacimiento_mas=?, sexo_mas=? WHERE id_mas=?";
+    String sql = "UPDATE mascotas SET nombre_mas=?, raza_mas=?, fecha_nacimiento_mas=?, sexo_mas=?, id_especie=?, id_cliente=? WHERE id_mas=?";
     try{
         con = cn.getConnection();
         ps = con.prepareStatement(sql);
         ps.setString(1, m.getNombre_mas());
         ps.setString(2, m.getRaza_mas());
-        ps.setString(3, m.getNacimiento_mas());
+        ps.setString(3, m.getFecha_nacimiento_mas());
         ps.setString(4, m.getSexo_mas());
-        ps.setInt(5, m.getId_mas());
+        ps.setInt(5, m.getId_especie());
+        ps.setInt(6, m.getId_cliente());
+        ps.setInt(7, m.getId_mas());
         
         ps.executeUpdate();
         return true;

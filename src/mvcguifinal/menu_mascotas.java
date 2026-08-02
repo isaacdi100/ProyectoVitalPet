@@ -48,48 +48,65 @@ public class menu_mascotas extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtIdEspecie = new javax.swing.JTextField();
         txtIdCliente = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("MASCOTAS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 217, -1));
+        jLabel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 217, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NOMBRE");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 60, 30));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("RAZA");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 60, 30));
 
-        jLabel5.setText("F.NACIMIENTO");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 80, 20));
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("FECHA_NACIMIENTO");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 90, 20));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("SEXO");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 40, 20));
         getContentPane().add(txtNombreMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 120, 30));
         getContentPane().add(txtRazaMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 120, -1));
-        getContentPane().add(txtNacimientoMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 120, -1));
+        getContentPane().add(txtNacimientoMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 120, -1));
 
+        cbxSexoMa.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         cbxSexoMa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Hembra" }));
         getContentPane().add(cbxSexoMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 120, 20));
 
+        btnInsertar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnInsertar.setText("INSERTAR");
         getContentPane().add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
+        btnEliminar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnEliminar.setText("ELIMINAR");
         getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
 
+        btnActualizar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnActualizar.setText("ACTUALIZAR");
         getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, -1, -1));
 
+        btnLimpiar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnLimpiar.setText("LIMPIAR");
         getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, -1, -1));
 
+        btnRegresar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnRegresar.setText("REGRESAR");
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, -1, -1));
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, -1, -1));
 
+        tblMascotas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         tblMascotas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -98,7 +115,7 @@ public class menu_mascotas extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "id", "Nombre", "Raza", "F.Nacimiento", "Sexo", "id_especie", "id_cliente"
+                "id", "nombre", "raza", "fecha_nacimiento", "sexo", "id_especie", "id_cliente"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -120,15 +137,22 @@ public class menu_mascotas extends javax.swing.JFrame {
             tblMascotas.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 520, 210));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 430, 190));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID_ESPECIE");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("ID_CLIENTE");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
         getContentPane().add(txtIdEspecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 120, 30));
         getContentPane().add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 120, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images22.jpg"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 910, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -172,6 +196,7 @@ public class menu_mascotas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblMascotas;
     private javax.swing.JTextField txtIdCliente;
