@@ -65,5 +65,39 @@ public class especiesDAO {
         }
         return lista;
     }
+    // Eliminar Especies
+    public boolean eliminarEspecies(int id_especie) {
+        String sql = "DELETE FROM especies WHERE id_especie = ? ";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id_especie);
+            ps.executeUpdate();
+            return true;
+            
+        } catch(Exception ex) {
+            System.out.println("Error" + ex.toString());
+            return false;
+        }
+    }
+
+    // Actualizar Especies
+    public boolean actualizarEspecies(especies e) {
+        String sql = "UPDATE especies SET nombre_especie=?, descripcion_especie=? WHERE id_especie=?";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, e.getNombreEsp());
+            ps.setString(2, e.getDescripcionEsp());
+            ps.setInt(3, e.getIdEsp());
+            
+            ps.executeUpdate();
+            return true;
+            
+        } catch(Exception ex) {
+            System.out.println("Error" + ex.toString());
+        }
+        return false;
+    }
 }
 
