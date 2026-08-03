@@ -19,6 +19,19 @@ public class menu_mascotas extends javax.swing.JFrame {
      */
     public menu_mascotas() {
         initComponents();
+         mascotasController tabla = new mascotasController(this);
+         tabla.ListarMascotas(); 
+         tblMascotas.getSelectionModel().addListSelectionListener(e -> {
+        int fila = tblMascotas.getSelectedRow();
+        if (!e.getValueIsAdjusting() && fila >= 0) {
+        txtNombreMa.setText(tblMascotas.getValueAt(fila, 1).toString());
+        txtRazaMa.setText(tblMascotas.getValueAt(fila, 2).toString());
+        txtNacimientoMa.setText(tblMascotas.getValueAt(fila, 3).toString());
+        txtIdEspecie.setText(tblMascotas.getValueAt(fila, 5).toString());
+        txtIdCliente.setText(tblMascotas.getValueAt(fila, 6).toString());
+    }
+  });
+
     
         
     }
