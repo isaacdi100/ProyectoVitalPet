@@ -20,6 +20,8 @@ public class MVCGUIFinal {
         conexionBase conn =new conexionBase ();
         Connection con = conn.getConnection();
         if(con!=null){
+            Login login = new Login ();
+            login.setVisible(true);
             System.out.println("Conexion exitosa");
         }else{
             System.out.println("Error de conexion");
