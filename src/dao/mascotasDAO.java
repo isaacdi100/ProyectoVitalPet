@@ -28,6 +28,7 @@ public class mascotasDAO {
 //INSERTAR    
 public boolean insertarMacotas(mascotas m){
     String sql = "INSERT INTO mascotas (id_mas,nombre_mas,raza_mas,fecha_nacimiento_mas,sexo_mas,id_especie,id_cliente)VALUES(?,?,?,?,?,?,?)";
+    
     try{
         con =cn.getConnection();
         ps =con.prepareStatement(sql);
@@ -74,7 +75,7 @@ public List<mascotas>ListarMascotas(){
     
 }
 //ELIMINAR
-public boolean eliminarMacotas(int id_mas){
+public boolean eliminarMascotas(int id_mas){
     String  sql = "DELETE FROM mascotas WHERE id_mas = ? ";
     try{
         con = cn.getConnection();

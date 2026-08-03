@@ -4,6 +4,8 @@
  */
 package mvcguifinal;
 
+import controller.mascotasController;
+
 /**
  *
  * @author DELL
@@ -17,6 +19,8 @@ public class menu_mascotas extends javax.swing.JFrame {
      */
     public menu_mascotas() {
         initComponents();
+    
+        
     }
 
     /**
@@ -88,22 +92,27 @@ public class menu_mascotas extends javax.swing.JFrame {
 
         btnInsertar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnInsertar.setText("INSERTAR");
+        btnInsertar.addActionListener(this::btnInsertarActionPerformed);
         getContentPane().add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
         btnEliminar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnEliminar.setText("ELIMINAR");
+        btnEliminar.addActionListener(this::btnEliminarActionPerformed);
         getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
 
         btnActualizar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnActualizar.setText("ACTUALIZAR");
+        btnActualizar.addActionListener(this::btnActualizarActionPerformed);
         getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, -1, -1));
 
         btnLimpiar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnLimpiar.setText("LIMPIAR");
+        btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
         getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, -1, -1));
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnRegresar.setText("REGRESAR");
+        btnRegresar.addActionListener(this::btnRegresarActionPerformed);
         getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, -1, -1));
 
         tblMascotas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -152,10 +161,50 @@ public class menu_mascotas extends javax.swing.JFrame {
         getContentPane().add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 120, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images22.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 910, 500));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 730, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+       Menu inicio=new Menu();
+        inicio.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
+        // TODO add your handling code here:
+      mascotasController control = new mascotasController(this);
+       control.insertarMascotas(); 
+
+
+    }//GEN-LAST:event_btnInsertarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        mascotasController control = new mascotasController(this);
+        control.eliminarMascotas();
+
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+        mascotasController control = new mascotasController(this);
+        control.actualizarMascotas();
+
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        txtNombreMa.setText("");
+        txtRazaMa.setText("");
+        txtNacimientoMa.setText("");
+        txtIdEspecie.setText("");
+        txtIdCliente.setText("");
+  
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,8 +247,8 @@ public class menu_mascotas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblMascotas;
-    private javax.swing.JTextField txtIdCliente;
+    public javax.swing.JTable tblMascotas;
+    public javax.swing.JTextField txtIdCliente;
     public javax.swing.JTextField txtIdEspecie;
     public javax.swing.JTextField txtNacimientoMa;
     public javax.swing.JTextField txtNombreMa;
