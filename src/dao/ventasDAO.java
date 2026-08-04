@@ -30,7 +30,7 @@ public class ventasDAO {
             con=cn.getConnection();
             ps=con.prepareStatement(sql);
             ps.setString(1, v.getFechaVenta());
-            ps.setString(2,v.getTotalVenta());
+            ps.setDouble(2,v.getTotalVenta());
             ps.setString(3, v.getFormaPago());
             
             ps.executeUpdate();
@@ -41,6 +41,28 @@ public class ventasDAO {
             System.out.println("Error"+ e.toString());
             return false;
         }
+    }
+    public List<ventas>  ListarVentas(){
+        List <ventas> lista = new ArrayList();
+        String sql = "SELECTED * FROM ventas ";
+        try{
+            con = cn.getConnection ();
+            ps= con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                ventas v = new ventas();
+                v.setIdVenta(rs.getInt("id_venta"));
+                v.setFechaVenta(rs.getString("fecha_venta"));
+                v.setTotalVenta(rs.getDouble ("total_venta"));
+                v.setFormaPago(rs.getString("forma_pago"));
+                
+                lista.add(v);
+                
+            }
+        }catch(Exception e ){
+            System.out.println(e);
+        }
+        return lista ;
     }
     public boolean eliminarVnetas (int id_venta){
         String sql ="DELETE FROM ventas Where id_venta =?";
@@ -55,6 +77,20 @@ public class ventasDAO {
             System.out.println("Error"+e.toString());
             return false ;
         }
+    }
+    public boolean actualizarVentas(ventas v ){
+        String sql="UPDATE ventas SET fecha_venta =? , total_vcenta=? forma_pago =? WHERE id_venta=?";
+        try{
+            con = cn.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.setString(1, v.getFechaVenta());
+            ps.setDouble(2, v.getTotalVenta());
+            ps.setString(3, v.getFormaPago());
+            ps.setInt(0, v.getIdVenta());
+        }catch(Exception e){
+            System.out.println("Error"+e.toString());
+        }
+        return false ;
     }
 }
 

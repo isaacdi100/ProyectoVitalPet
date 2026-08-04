@@ -11,9 +11,11 @@ package modelo;
 public class ventas {
     private int idVenta;
     private String fechaVenta;
-    private String totalVenta ;
+    private Double totalVenta ;
     private String formaPago ;
-    public ventas(int idVenta , String fechaVenta ,String totalVenta, String formaPago){
+    
+    public ventas(){}
+    public ventas(int idVenta , String fechaVenta ,Double totalVenta, String formaPago){
         this.idVenta=idVenta ;
         this.fechaVenta=fechaVenta;
         this.totalVenta=totalVenta;
@@ -29,7 +31,7 @@ public class ventas {
         this.fechaVenta = fechaVenta;
     }
 
-    public void setTotalVenta(String totalVenta) {
+    public void setTotalVenta(Double totalVenta) {
         this.totalVenta = totalVenta;
     }
 
@@ -45,7 +47,7 @@ public class ventas {
         return fechaVenta;
     }
 
-    public String getTotalVenta() {
+    public Double getTotalVenta() {
         return totalVenta;
     }
 
