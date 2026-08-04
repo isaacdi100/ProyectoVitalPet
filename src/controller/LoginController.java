@@ -27,6 +27,10 @@ public class LoginController {
         clientes c = dao.Login(clientes, password);
         
         if(c!=null){
+            if (c.getRol().equalsIgnoreCase("Cliente")){
+                JOptionPane.showMessageDialog(null,"Acceso denegado los clientes no pueden iniciar sesion");
+                return ;
+            }
             JOptionPane.showMessageDialog(null,"BIENVENIDO  " +c.getNombre());
             
             Menu m =new Menu();
