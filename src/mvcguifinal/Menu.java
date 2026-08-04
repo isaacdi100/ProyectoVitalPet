@@ -52,18 +52,18 @@ public class Menu extends javax.swing.JFrame {
         btnCRUDEspecies.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         btnCRUDEspecies.setText("ESPECIES");
         btnCRUDEspecies.addActionListener(this::btnCRUDEspeciesActionPerformed);
-        getContentPane().add(btnCRUDEspecies, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        getContentPane().add(btnCRUDEspecies, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 140, 40));
 
         btnCRUDClientes.setBackground(new java.awt.Color(0, 204, 204));
         btnCRUDClientes.setText("𝓒𝓛𝓘𝓔𝓝𝓣𝓔");
         btnCRUDClientes.addActionListener(this::btnCRUDClientesActionPerformed);
-        getContentPane().add(btnCRUDClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 137, 39));
+        getContentPane().add(btnCRUDClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 137, 39));
 
         btnCRUDProductos.setBackground(new java.awt.Color(0, 204, 204));
         btnCRUDProductos.setText("𝓟𝓡𝓞𝓓𝓤𝓒𝓣𝓞𝓢");
         btnCRUDProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCRUDProductos.addActionListener(this::btnCRUDProductosActionPerformed);
-        getContentPane().add(btnCRUDProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 139, 43));
+        getContentPane().add(btnCRUDProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 139, 43));
 
         btnSalir.setBackground(new java.awt.Color(204, 204, 255));
         btnSalir.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
