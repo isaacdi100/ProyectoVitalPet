@@ -36,9 +36,6 @@ public class Menu extends javax.swing.JFrame {
         btnCRUDProductos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        btnCRUDClientes1 = new javax.swing.JButton();
-        btnCRUDClientes2 = new javax.swing.JButton();
-        btnCRUDClientes3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -63,31 +60,16 @@ public class Menu extends javax.swing.JFrame {
         btnCRUDProductos.setText("𝓟𝓡𝓞𝓓𝓤𝓒𝓣𝓞𝓢");
         btnCRUDProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCRUDProductos.addActionListener(this::btnCRUDProductosActionPerformed);
-        getContentPane().add(btnCRUDProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 139, 43));
+        getContentPane().add(btnCRUDProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 139, 43));
 
         btnSalir.setBackground(new java.awt.Color(204, 204, 255));
         btnSalir.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(this::btnSalirActionPerformed);
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 248, -1, -1));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/505055.jpeg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 350));
-
-        btnCRUDClientes1.setBackground(new java.awt.Color(0, 204, 204));
-        btnCRUDClientes1.setText("𝓒𝓛𝓘𝓔𝓝𝓣𝓔");
-        btnCRUDClientes1.addActionListener(this::btnCRUDClientes1ActionPerformed);
-        getContentPane().add(btnCRUDClientes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 66, 137, 39));
-
-        btnCRUDClientes2.setBackground(new java.awt.Color(0, 204, 204));
-        btnCRUDClientes2.setText("𝓒𝓛𝓘𝓔𝓝𝓣𝓔");
-        btnCRUDClientes2.addActionListener(this::btnCRUDClientes2ActionPerformed);
-        getContentPane().add(btnCRUDClientes2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 66, 137, 39));
-
-        btnCRUDClientes3.setBackground(new java.awt.Color(0, 204, 204));
-        btnCRUDClientes3.setText("𝓒𝓛𝓘𝓔𝓝𝓣𝓔");
-        btnCRUDClientes3.addActionListener(this::btnCRUDClientes3ActionPerformed);
-        getContentPane().add(btnCRUDClientes3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 137, 39));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -106,18 +88,6 @@ public class Menu extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_btnCRUDClientesActionPerformed
-
-    private void btnCRUDClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRUDClientes1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCRUDClientes1ActionPerformed
-
-    private void btnCRUDClientes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRUDClientes2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCRUDClientes2ActionPerformed
-
-    private void btnCRUDClientes3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRUDClientes3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCRUDClientes3ActionPerformed
 
     private void btnCRUDProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRUDProductosActionPerformed
         // TODO add your handling code here:
@@ -164,9 +134,6 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCRUDClientes;
-    private javax.swing.JButton btnCRUDClientes1;
-    private javax.swing.JButton btnCRUDClientes2;
-    private javax.swing.JButton btnCRUDClientes3;
     private javax.swing.JButton btnCRUDEspecies;
     private javax.swing.JButton btnCRUDProductos;
     private javax.swing.JButton btnSalir;

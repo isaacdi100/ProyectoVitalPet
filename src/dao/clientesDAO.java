@@ -25,7 +25,7 @@ public class clientesDAO {
     
     public clientes Login (String clientes , String password ){
         clientes c = null;
-        String sql ="SELECT * FROM clientes Where cedula_usu=? and password_usu=? and estado_usu='activo' and rol_usu='administrador' or rol_usu='empleado'";
+        String sql ="SELECT * FROM clientes Where cedula_usu=? AND password_usu=? AND estado_usu='activo' ";
         try{
             con =cn.getConnection();
             ps = con.prepareStatement(sql);
