@@ -10,6 +10,6 @@ import java.sql.*;
  * @author alexa
  */
 public class ventasController {
-    priv
+    
     
 }
