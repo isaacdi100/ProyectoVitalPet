@@ -8,6 +8,6 @@ package dao;
  *
  * @author alexa
  */
-public class Ventas {
+public class ventasDAO {
     
 }

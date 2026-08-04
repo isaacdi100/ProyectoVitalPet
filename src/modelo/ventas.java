@@ -9,5 +9,50 @@ package modelo;
  * @author alexa
  */
 public class ventas {
+    private int idVenta;
+    private String fechaVenta;
+    private String totalVenta ;
+    private String formaPago ;
+    public ventas(int idVenta , String fechaVenta ,String totalVenta, String formaPago){
+        this.idVenta=idVenta ;
+        this.fechaVenta=fechaVenta;
+        this.totalVenta=totalVenta;
+        this.formaPago=formaPago ;
+        
+    }
+
+    public void setIdVenta(int idVenta) {
+        this.idVenta = idVenta;
+    }
+
+    public void setFechaVenta(String fechaVenta) {
+        this.fechaVenta = fechaVenta;
+    }
+
+    public void setTotalVenta(String totalVenta) {
+        this.totalVenta = totalVenta;
+    }
+
+    public void setFormaPago(String formaPago) {
+        this.formaPago = formaPago;
+    }
+
+    public int getIdVenta() {
+        return idVenta;
+    }
+
+    public String getFechaVenta() {
+        return fechaVenta;
+    }
+
+    public String getTotalVenta() {
+        return totalVenta;
+    }
+
+    public String getFormaPago() {
+        return formaPago;
+    }
+    
+    
     
 }

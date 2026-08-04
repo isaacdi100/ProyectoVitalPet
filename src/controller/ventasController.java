@@ -3,11 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
+import java.sql.*;
 
 /**
  *
  * @author alexa
  */
 public class ventasController {
+    priv
     
 }
