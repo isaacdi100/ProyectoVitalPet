@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/ProyectoVitalPet/src/controller/ventasController.java</file>
-            <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/Menu.java</file>
-            <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/menu_clientes.java</file>
-            <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/menu_especies.java</file>
-            <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/menu_mascotas.java</file>
-            <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/menu_productos.java</file>
-            <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/menu_ventas.java</file>
-            <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/MVCGUIFinal.java</file>
+            <file>file:/C:/Users/GAMER/OneDrive/Desktop/TAREA%20DE%20PROGRAMACION/ProyectoVitalPet/src/dao/detalleventaDAO.java</file>
+            <file>file:/C:/Users/GAMER/OneDrive/Desktop/TAREA%20DE%20PROGRAMACION/ProyectoVitalPet/src/mvcguifinal/historialventas.java</file>
+            <file>file:/C:/Users/GAMER/OneDrive/Desktop/TAREA%20DE%20PROGRAMACION/ProyectoVitalPet/src/controller/detalleventasController.java</file>
+            <file>file:/C:/Users/GAMER/OneDrive/Desktop/TAREA%20DE%20PROGRAMACION/ProyectoVitalPet/src/modelo/detalleventa.java</file>
         </group>
     </open-files>
 </project-private>
