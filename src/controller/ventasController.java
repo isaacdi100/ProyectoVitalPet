@@ -7,6 +7,7 @@ import dao.ventasDAO;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.detalleventa;
 import modelo.ventas;
 import mvcguifinal.menu_ventas;
 
@@ -22,6 +23,10 @@ public class ventasController {
     public ventasController(menu_ventas vista){
         this.vista = vista;
         dao = new ventasDAO ();
+    }
+
+    public ventasController() {
+        
     }
     public void  insertarVentas(){
         ventas v = new ventas();
@@ -40,8 +45,13 @@ public class ventasController {
         
         
     }
-    public void ListarVentas(){
+    public List<ventas> ListarVentas(){
+    return dao.ListarVentas();
         
+}
+
+    public List<detalleventa> ListarDetalles() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

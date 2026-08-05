@@ -1,0 +1,262 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package mvcguifinal;
+import controller.ventasController;
+import java.text.SimpleDateFormat;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableModel;
+import modelo.detalleventa;
+import modelo.ventas;
+
+/**
+ *
+ * @author AEINK
+ */
+public class historialventas extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(historialventas.class.getName());
+    private final ventasController controller = new ventasController();
+    private final Map<Integer, Object[]> detallesPorFila = new LinkedHashMap<>();
+
+    /**
+     * Creates new form historialventas
+     */
+    public historialventas() {
+        initComponents();
+    }
+    private void cargarVentas() {
+
+    DefaultTableModel modelo = new DefaultTableModel(
+        new Object[][]{},
+        new String[]{
+            "Fecha",
+            "ID Detalle",
+            "ID Venta",
+            "ID Producto",
+            "Cantidad",
+            "Precio Unitario",
+            "Subtotal"
+        }
+    ) {
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    };
+
+    tblHistorial.setModel(modelo);
+
+    try {
+
+         List<detalleventa> lista = controller.ListarDetalles();
+
+        for (detalleventa d : lista) {
+
+            modelo.addRow(new Object[]{
+                "Hoy",
+                d.getIdDetalle(),
+                d.getIdVenta(),
+                d.getIdProducto(),
+                d.getCantidad(),
+                String.format("%.2f", d.getPrecioUnitario()),
+                String.format("%.2f", d.getSubtotal())
+            });
+        }
+
+    } catch (Exception e) {
+
+        javax.swing.JOptionPane.showMessageDialog(this,
+                "No se pudo cargar el historial de ventas: "
+                + e.getMessage());
+    }
+}
+
+   private void btnVerDetalleActionPerformed(java.awt.event.ActionEvent evt) {
+
+    int filaSeleccionada = tblHistorial.getSelectedRow();
+
+    if (filaSeleccionada < 0) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+                "Selecciona una fila del historial.");
+        return;
+    }
+
+    Object[] datos = detallesPorFila.get(
+            tblHistorial.convertRowIndexToModel(filaSeleccionada));
+
+    if (datos == null || datos.length < 2) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+                "No se encontró el detalle de esta venta.");
+        return;
+    }
+
+    ventas ventaSeleccionada = (ventas) datos[0];
+    detalleventa detalleSeleccionado = (detalleventa) datos[1];
+
+    StringBuilder mensaje = new StringBuilder();
+
+    mensaje.append("=========== DETALLE DE VENTA ===========\n\n");
+    mensaje.append("ID Venta: ")
+            .append(ventaSeleccionada.getIdVenta())
+            .append("\n");
+
+    mensaje.append("Fecha: ")
+            .append(ventaSeleccionada.getFechaVenta())
+            .append("\n");
+
+    mensaje.append("Forma de Pago: ")
+            .append(ventaSeleccionada.getFormaPago())
+            .append("\n\n");
+
+    mensaje.append("----------- PRODUCTO -----------\n");
+
+    mensaje.append("ID Producto: ")
+            .append(detalleSeleccionado.getIdProducto())
+            .append("\n");
+
+    mensaje.append("Cantidad: ")
+            .append(detalleSeleccionado.getCantidad())
+            .append("\n");
+
+    mensaje.append("Precio Unitario: ")
+            .append(String.format("%.2f", detalleSeleccionado.getPrecioUnitario()))
+            .append("\n");
+
+    mensaje.append("Subtotal: ")
+            .append(String.format("%.2f", detalleSeleccionado.getSubtotal()))
+            .append("\n\n");
+
+    mensaje.append("=========== TOTAL ===========\n");
+    mensaje.append(String.format("%.2f", ventaSeleccionada.getTotalVenta()));
+
+    javax.swing.JTextArea areaTexto = new javax.swing.JTextArea(mensaje.toString());
+    areaTexto.setEditable(false);
+    areaTexto.setLineWrap(true);
+    areaTexto.setWrapStyleWord(true);
+    areaTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+    javax.swing.JScrollPane scroll = new javax.swing.JScrollPane(areaTexto);
+    scroll.setPreferredSize(new java.awt.Dimension(420, 260));
+
+    javax.swing.JOptionPane.showMessageDialog(
+            this,
+            scroll,
+            "Detalle de Venta",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE
+    );
+}
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblHistorial = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tblHistorial.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Fecha", "ID Detalle", "ID Venta", "ID Producto", "Cantidad", "Precio Unitario", "Subtotal"
+            }
+        ));
+        jScrollPane1.setViewportView(tblHistorial);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("HISTORIAL VENTAS");
+
+        btnRegresar.setText("REGRESAR");
+        btnRegresar.addActionListener(this::btnRegresarActionPerformed);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(btnRegresar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(btnRegresar)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        Menu das = new Menu();
+        das.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new historialventas().setVisible(true));
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblHistorial;
+    // End of variables declaration//GEN-END:variables
+}

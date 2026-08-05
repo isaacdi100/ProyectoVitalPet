@@ -30,26 +30,41 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
+        btnHistorialVentas = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         btnCRUDEspecies = new javax.swing.JButton();
         btnCRUDClientes = new javax.swing.JButton();
         btnCRUDProductos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
 
+        jToggleButton1.setText("jToggleButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setOpaque(false);
+
+        btnHistorialVentas.setBackground(new java.awt.Color(0, 255, 255));
+        btnHistorialVentas.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnHistorialVentas.setText("HISTORIAL DE VENTAS");
+        btnHistorialVentas.addActionListener(this::btnHistorialVentasActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(214, Short.MAX_VALUE)
+                .addComponent(btnHistorialVentas)
+                .addGap(43, 43, 43))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(btnHistorialVentas)
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 36)); // NOI18N
@@ -160,6 +175,14 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCRUDEspeciesActionPerformed
 
+    private void btnHistorialVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialVentasActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, " Historial de Ventas ");
+        historialventas ingresar = new historialventas();
+        ingresar.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnHistorialVentasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -189,8 +212,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnCRUDClientes;
     private javax.swing.JButton btnCRUDEspecies;
     private javax.swing.JButton btnCRUDProductos;
+    public javax.swing.JToggleButton btnHistorialVentas;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
