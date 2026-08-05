@@ -9,8 +9,10 @@
             <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/menu_especies.java</file>
             <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/menu_mascotas.java</file>
             <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/menu_productos.java</file>
-            <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/menu_ventas.java</file>
             <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/MVCGUIFinal.java</file>
+            <file>file:/C:/ProyectoVitalPet/src/controller/LoginController.java</file>
+            <file>file:/C:/ProyectoVitalPet/src/mvcguifinal/Login.java</file>
+            <file>file:/C:/ProyectoVitalPet/src/modelo/conexionBase.java</file>
         </group>
     </open-files>
 </project-private>
