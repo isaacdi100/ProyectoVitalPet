@@ -40,6 +40,9 @@ public class ventasController {
         
         
     }
-    
-    
+    public void ListarVentas(){
+        
+    }
+
 }
+        

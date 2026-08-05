@@ -32,6 +32,7 @@ public class menu_especies extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtNombreEsp = new javax.swing.JTextField();
@@ -44,12 +45,14 @@ public class menu_especies extends javax.swing.JFrame {
         btnEliminarEsp = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gg.png"))); // NOI18N
+        jLabel7.setText("jLabel7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,9 +109,6 @@ public class menu_especies extends javax.swing.JFrame {
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(this::btnRegresarActionPerformed);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gg.png"))); // NOI18N
-        jLabel7.setText("jLabel7");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,7 +145,6 @@ public class menu_especies extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(btnRegresar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,8 +174,8 @@ public class menu_especies extends javax.swing.JFrame {
                         .addComponent(btnLimpiar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(btnRegresar))))
-            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRegresar)))
+                .addGap(10, 10, 10))
         );
 
         pack();
