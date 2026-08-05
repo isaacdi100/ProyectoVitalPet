@@ -31,7 +31,8 @@ public class menu_especies extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtNombreEsp = new javax.swing.JTextField();
@@ -44,31 +45,26 @@ public class menu_especies extends javax.swing.JFrame {
         btnEliminarEsp = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gg.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
 
-        jLabel3.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 24)); // NOI18N
-        jLabel3.setText("Especies/Mascotas");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(647, 1096, 74, -1));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gg.png"))); // NOI18N
+        jLabel7.setText("jLabel7");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
         jLabel4.setText("Especies / Mascotas");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 480, -1));
 
         jLabel6.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 24)); // NOI18N
         jLabel6.setText("Descripcion");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
-        getContentPane().add(txtNombreEsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 130, 110, 30));
-        getContentPane().add(txtDescripcionEsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 110, 30));
 
         jLabel5.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 24)); // NOI18N
         jLabel5.setText("Nombre");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
         tblEspecies.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -88,43 +84,102 @@ public class menu_especies extends javax.swing.JFrame {
         });
         tabla.setViewportView(tblEspecies);
 
-        getContentPane().add(tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 350, 110));
-
         btnADDEspecies.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnADDEspecies.setForeground(new java.awt.Color(255, 51, 102));
         btnADDEspecies.setText("Insertar");
         btnADDEspecies.addActionListener(this::btnADDEspeciesActionPerformed);
-        getContentPane().add(btnADDEspecies, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         btnActualizarEsp.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnActualizarEsp.setForeground(new java.awt.Color(102, 102, 255));
         btnActualizarEsp.setText("Actualizar");
         btnActualizarEsp.addActionListener(this::btnActualizarEspActionPerformed);
-        getContentPane().add(btnActualizarEsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, -1, -1));
 
         btnEliminarEsp.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnEliminarEsp.setForeground(new java.awt.Color(0, 204, 153));
         btnEliminarEsp.setText("Eliminar");
         btnEliminarEsp.addActionListener(this::btnEliminarEspActionPerformed);
-        getContentPane().add(btnEliminarEsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         btnLimpiar.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnLimpiar.setForeground(new java.awt.Color(255, 153, 51));
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
-        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
 
         btnRegresar.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(153, 0, 153));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(this::btnRegresarActionPerformed);
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gg.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNombreEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(txtDescripcionEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(40, 40, 40)
+                        .addComponent(tabla, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnADDEspecies)
+                            .addComponent(btnEliminarEsp))
+                        .addGap(45, 45, 45)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnActualizarEsp)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(btnLimpiar)))
+                        .addGap(29, 29, 29)
+                        .addComponent(btnRegresar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel4)
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtNombreEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(txtDescripcionEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tabla, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnADDEspecies)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnEliminarEsp))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnActualizarEsp)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnLimpiar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnRegresar)))
+                .addGap(10, 10, 10))
+        );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnADDEspeciesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnADDEspeciesActionPerformed
@@ -209,10 +264,10 @@ public void limpiar() {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane tabla;
     public javax.swing.JTable tblEspecies;
     public javax.swing.JTextField txtDescripcionEsp;
