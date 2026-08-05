@@ -4,12 +4,9 @@
  */
 package dao;
 
-/**
- *
- * @author AEINK
- */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.List;
 import modelo.conexionBase;
 import modelo.detalleventa;
 
@@ -24,7 +21,6 @@ public class detalleventaDAO {
         String sql = "INSERT INTO detalle_ventas(id_venta,id_producto,cantidad,precio_unitario,subtotal) VALUES(?,?,?,?,?)";
 
         try {
-
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
 
@@ -39,10 +35,12 @@ public class detalleventaDAO {
             return true;
 
         } catch (Exception e) {
-            System.out.println("Error " + e.toString());
+            System.out.println(e.toString());
             return false;
         }
-
     }
 
+    public List<detalleventa> ListarDetalles() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
