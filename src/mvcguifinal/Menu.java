@@ -31,41 +31,17 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jToggleButton1 = new javax.swing.JToggleButton();
-        jPanel1 = new javax.swing.JPanel();
-        btnHistorialVentas = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         btnCRUDEspecies = new javax.swing.JButton();
         btnCRUDClientes = new javax.swing.JButton();
         btnCRUDProductos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        btnHistorialVentas1 = new javax.swing.JToggleButton();
+        btnHistorialVentas = new javax.swing.JToggleButton();
 
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setOpaque(false);
-
-        btnHistorialVentas.setBackground(new java.awt.Color(0, 255, 255));
-        btnHistorialVentas.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        btnHistorialVentas.setText("HISTORIAL DE VENTAS");
-        btnHistorialVentas.addActionListener(this::btnHistorialVentasActionPerformed);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(214, Short.MAX_VALUE)
-                .addComponent(btnHistorialVentas)
-                .addGap(43, 43, 43))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addComponent(btnHistorialVentas)
-                .addContainerGap(180, Short.MAX_VALUE))
-        );
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
@@ -90,6 +66,26 @@ public class Menu extends javax.swing.JFrame {
         btnSalir.setText("Salir");
         btnSalir.addActionListener(this::btnSalirActionPerformed);
 
+        btnHistorialVentas1.setBackground(new java.awt.Color(0, 255, 255));
+        btnHistorialVentas1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnHistorialVentas1.setText("MASCOTAS");
+        btnHistorialVentas1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHistorialVentas1MouseClicked(evt);
+            }
+        });
+        btnHistorialVentas1.addActionListener(this::btnHistorialVentas1ActionPerformed);
+
+        btnHistorialVentas.setBackground(new java.awt.Color(0, 255, 255));
+        btnHistorialVentas.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnHistorialVentas.setText("HISTORIAL DE VENTAS");
+        btnHistorialVentas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHistorialVentasMouseClicked(evt);
+            }
+        });
+        btnHistorialVentas.addActionListener(this::btnHistorialVentasActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,10 +106,13 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(btnCRUDEspecies, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnCRUDEspecies, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(btnHistorialVentas))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(btnHistorialVentas1)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,17 +124,18 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addComponent(btnCRUDClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(btnCRUDProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addComponent(btnSalir))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(109, 109, 109)
-                        .addComponent(btnCRUDEspecies, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCRUDEspecies, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnHistorialVentas)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(btnCRUDProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(btnHistorialVentas1)
+                .addGap(39, 39, 39)
+                .addComponent(btnSalir)
                 .addGap(40, 40, 40))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -183,6 +183,24 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnHistorialVentasActionPerformed
 
+    private void btnHistorialVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHistorialVentasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHistorialVentasMouseClicked
+
+    private void btnHistorialVentas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHistorialVentas1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHistorialVentas1MouseClicked
+
+    private void btnHistorialVentas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialVentas1ActionPerformed
+        // TODO add your handling code here:
+         JOptionPane.showMessageDialog(null, " Historial de Ventas ");
+        menu_mascotas ingresar = new menu_mascotas();
+        ingresar.setVisible(true);
+        this.dispose();
+        
+        
+    }//GEN-LAST:event_btnHistorialVentas1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -213,9 +231,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnCRUDEspecies;
     private javax.swing.JButton btnCRUDProductos;
     public javax.swing.JToggleButton btnHistorialVentas;
+    public javax.swing.JToggleButton btnHistorialVentas1;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
