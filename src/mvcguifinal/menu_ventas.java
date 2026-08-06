@@ -4,6 +4,8 @@
  */
 package mvcguifinal;
 import controller.ventasController;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -114,8 +116,44 @@ public class menu_ventas extends javax.swing.JFrame {
 
     private void btnAgregarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVentasActionPerformed
         // TODO add your handling code here:
-        ventasController control = new ventasController(this);
-        control.insertarVentas();
+         producto p = controller.buscarProducto(txtNombrePro.getText());
+
+    if (p == null) {
+        JOptionPane.showMessageDialog(this, "Primero busque un producto.");
+        return;
+    }
+
+    int cantidad = Integer.parseInt(txtCantidadPro.getText());
+
+    if (cantidad <= 0) {
+        JOptionPane.showMessageDialog(this, "Cantidad inválida.");
+        return;
+    }
+
+    if (cantidad > p.getStock()) {
+        JOptionPane.showMessageDialog(this, "Stock insuficiente.");
+        return;
+    }
+
+    Controller.agregarProducto(
+            p.getId(),
+            cantidad,
+            p.getPrecio()
+    );
+
+    DefaultTableModel modelo = (DefaultTableModel) tblCarrito.getModel();
+
+    modelo.addRow(new Object[]{
+        p.getId(),
+        p.getNombre(),
+        cantidad,
+        p.getPrecio(),
+        cantidad * p.getPrecio()
+    });
+
+    txtTotalPagar.setText(String.valueOf(controller.calcularTotal()));
+
+     
     }//GEN-LAST:event_btnAgregarVentasActionPerformed
 
     /**

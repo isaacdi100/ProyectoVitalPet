@@ -4,18 +4,51 @@
  */
 package modelo;
 
+import java.util.Date;
+import java.util.List;
+
 /**
  *
  * @author alexa
  */
 public class ventas {
     private int idVenta;
-    private String fechaVenta;
+    private Date fechaVenta;
     private Double totalVenta ;
     private String formaPago ;
+    private int Id_usu;
+    private String nombreCliente;
+    
+    
+    private List<detalleventa> detalles ;
+
+    public void setDetalles(List<detalleventa> detalles) {
+        this.detalles = detalles;
+    }
+
+    public List<detalleventa> getDetalles() {
+        return detalles;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+    
+
+    public int getId_usu() {
+        return Id_usu;
+    }
+
+    public void setId_usu(int getId_usu) {
+        this.Id_usu = getId_usu;
+    }
     
     public ventas(){}
-    public ventas(int idVenta , String fechaVenta ,Double totalVenta, String formaPago){
+    public ventas(int idVenta , Date fechaVenta ,Double totalVenta, String formaPago){
         this.idVenta=idVenta ;
         this.fechaVenta=fechaVenta;
         this.totalVenta=totalVenta;
@@ -27,7 +60,7 @@ public class ventas {
         this.idVenta = idVenta;
     }
 
-    public void setFechaVenta(String fechaVenta) {
+    public void setFechaVenta(Date fechaVenta) {
         this.fechaVenta = fechaVenta;
     }
 
@@ -43,7 +76,7 @@ public class ventas {
         return idVenta;
     }
 
-    public String getFechaVenta() {
+    public Date getFechaVenta() {
         return fechaVenta;
     }
 
@@ -54,7 +87,8 @@ public class ventas {
     public String getFormaPago() {
         return formaPago;
     }
-    
+
+  
     
     
 }
