@@ -6,6 +6,7 @@ package mvcguifinal;
 import controller.ventasController;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import mvcguifinal.historialventas;
 
 /**
  *
@@ -40,6 +41,14 @@ public class menu_ventas extends javax.swing.JFrame {
         cbxFormaPago = new javax.swing.JComboBox<>();
         btnSalir = new javax.swing.JButton();
         btnAgregarVentas = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtCedulaCli = new javax.swing.JTextField();
+        btnBuscarCli = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        txtNombreCli = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtNombrePro = new javax.swing.JTextField();
+        btnBuscarPro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +67,16 @@ public class menu_ventas extends javax.swing.JFrame {
         btnAgregarVentas.setText("Guardar");
         btnAgregarVentas.addActionListener(this::btnAgregarVentasActionPerformed);
 
+        jLabel5.setText("Cliente");
+
+        btnBuscarCli.setText("Buscar");
+
+        jLabel6.setText("Nombre Cliente");
+
+        jLabel7.setText("Producto");
+
+        btnBuscarPro.setText("Buscar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,46 +88,75 @@ public class menu_ventas extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSalir)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(92, 92, 92)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtFechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtTotalventa, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbxFormaPago, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnAgregarVentas)))))
-                .addContainerGap(144, Short.MAX_VALUE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSalir, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAgregarVentas))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addGap(94, 94, 94)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtNombrePro)
+                            .addComponent(txtNombreCli)
+                            .addComponent(txtCedulaCli)
+                            .addComponent(txtFechaVenta, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTotalventa)
+                            .addComponent(cbxFormaPago, 0, 92, Short.MAX_VALUE))))
+                .addGap(40, 40, 40)
+                .addComponent(btnBuscarCli)
+                .addGap(26, 26, 26))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(216, 216, 216)
+                        .addComponent(btnBuscarPro)
+                        .addGap(23, 23, 23))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                        .addGap(312, 312, 312))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(txtFechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtCedulaCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarCli))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtNombreCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtNombrePro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarPro))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtFechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtTotalventa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(cbxFormaPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalir)
                     .addComponent(btnAgregarVentas))
-                .addGap(34, 34, 34))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -116,42 +164,30 @@ public class menu_ventas extends javax.swing.JFrame {
 
     private void btnAgregarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVentasActionPerformed
         // TODO add your handling code here:
-         producto p = controller.buscarProducto(txtNombrePro.getText());
+        producto p = buscarProducto(txtNombrePro.getText());
 
     if (p == null) {
         JOptionPane.showMessageDialog(this, "Primero busque un producto.");
         return;
     }
 
-    int cantidad = Integer.parseInt(txtCantidadPro.getText());
+   
 
-    if (cantidad <= 0) {
-        JOptionPane.showMessageDialog(this, "Cantidad inválida.");
-        return;
-    }
-
-    if (cantidad > p.getStock()) {
-        JOptionPane.showMessageDialog(this, "Stock insuficiente.");
-        return;
-    }
-
-    Controller.agregarProducto(
+    controller.agregarProducto(
             p.getId(),
-            cantidad,
+            
             p.getPrecio()
     );
 
-    DefaultTableModel modelo = (DefaultTableModel) tblCarrito.getModel();
+    DefaultTableModel modelo = (DefaultTableModel) tblHistorial.getModel();
 
     modelo.addRow(new Object[]{
         p.getId(),
         p.getNombre(),
-        cantidad,
+        
         p.getPrecio(),
-        cantidad * p.getPrecio()
+        
     });
-
-    txtTotalPagar.setText(String.valueOf(controller.calcularTotal()));
 
      
     }//GEN-LAST:event_btnAgregarVentasActionPerformed
@@ -183,13 +219,21 @@ public class menu_ventas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarVentas;
+    private javax.swing.JButton btnBuscarCli;
+    private javax.swing.JButton btnBuscarPro;
     private javax.swing.JButton btnSalir;
     public javax.swing.JComboBox<String> cbxFormaPago;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField txtCedulaCli;
     public javax.swing.JTextField txtFechaVenta;
+    private javax.swing.JTextField txtNombreCli;
+    private javax.swing.JTextField txtNombrePro;
     public javax.swing.JTextField txtTotalventa;
     // End of variables declaration//GEN-END:variables
 }
